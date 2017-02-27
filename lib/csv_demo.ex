@@ -18,13 +18,13 @@ defmodule CsvDemo do
     # "some,csv,data"
     # |> CSV.parse_string
     # I am just getting a string from a file
-    "demo.csv"
+    "matt.csv"
     |> File.read!
     |> CSV.parse_string
-    |> Enum.map(fn [id, name, age, location] = row ->
+    |> Enum.map(fn [id, name, age] = row ->
       # note that the first line's values are headers and ignored
       IO.inspect row
-      %{id: id, name: name, age: age, location: location}
+      %{id: id, name: name, age: age}
     end)
 
   end
